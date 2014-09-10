@@ -1,0 +1,9 @@
+<apex:page >
+    <iframe name="iframe_name" src="" width="100%"
+    height="100%" frameborder="0" style="background: yellow">
+
+    The iframe could not be shown.
+    ölaksjdföklajsdfölkajs<br/>
+
+</iframe>
+</apex:page>

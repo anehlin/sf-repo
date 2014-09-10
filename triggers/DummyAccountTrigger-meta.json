@@ -1,0 +1,8 @@
+{
+	"id": "01qi0000000GADiAAO",
+	"name": "DummyAccountTrigger",
+	"apiVersion": 31,
+	"status": "Active",
+	"container": "ApexTriggerMember",
+	"source": "DummyAccountTrigger.trigger"
+}
