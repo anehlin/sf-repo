@@ -5,26 +5,26 @@ module.exports = function(grunt) {
 
   var sfInfo = grunt.file.readJSON('sfInfo.json');
 
-  grunt.registerMultiTask('init_repo', 'Initialize a git repository in a directory.', function() {
-    var dest = this.files[0].dest;
+  // grunt.registerMultiTask('init_repo', 'Initialize a git repository in a directory.', function() {
+  //   var dest = this.files[0].dest;
 
-    if (!grunt.file.exists(dest)) {
-      grunt.file.mkdir(dest);
-    }
+  //   if (!grunt.file.exists(dest)) {
+  //     grunt.file.mkdir(dest);
+  //   }
 
-    else if (!grunt.file.isDir(dest)) {
-      grunt.fail.warn('A source directory is needed.');
-      return false;
-    }
+  //   else if (!grunt.file.isDir(dest)) {
+  //     grunt.fail.warn('A source directory is needed.');
+  //     return false;
+  //   }
 
-    var done = this.async();
+  //   var done = this.async();
 
-    grunt.util.spawn({
-      cmd: 'git',
-      args: ['init'],
-      opts: {cwd: dest}
-    }, done);
-  });
+  //   grunt.util.spawn({
+  //     cmd: 'git',
+  //     args: ['init'],
+  //     opts: {cwd: dest}
+  //   }, done);
+  // });
 
   // Project configuration.
   grunt.initConfig({
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
 
     sfpull: {
       options: {
-        classes: ['MyHelloWorld'],
+        classes: ['MyHelloWorld', 'Testfactory'],
         triggers: ['DummyAccountTrigger'],
         pages: ['CV_Generator']
       },
@@ -75,21 +75,6 @@ module.exports = function(grunt) {
       tests: ['test/*_test.js']
     },
 
-    init_repo: {
-      main: {
-        dest: 'tmp/repo'
-      }
-    },
-
-    // git_deploy: {
-    //   default_options: {
-    //     options: {
-    //        url: 'https://github.com/anehlin/sf-repo'
-    //     },
-    //      src: 'components/**'
-    //   }
-    // }
-
     'gh-pages': {
       options: {
         components: '**',
@@ -98,21 +83,6 @@ module.exports = function(grunt) {
       },
       src: ['**']
     }
-
-    // buildcontrol: {
-    //   options: {
-    //     dir: 'components',
-    //     commit: true,
-    //     push: true,
-    //     message: 'Built asdfa from commit aasdf on branch afsdas'
-    //   },
-    //   pages: {
-    //     options: {
-    //       remote: 'https://github.com/anehlin/sf-repo',
-    //       branch: 'src'
-    //     }
-    //   }
-    // }
 
   });
 
@@ -124,9 +94,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-sf-tooling');
-  grunt.loadNpmTasks('grunt-git-deploy');
   grunt.loadNpmTasks('grunt-gh-pages');
-  grunt.loadNpmTasks('grunt-build-control');
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
@@ -139,9 +107,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('sf-push', ['sfpush']);
 
-  // grunt.registerTask('deploy', ['git_deploy']);
+  grunt.registerTask('deploy', ['gh-pages', 'sfpush']);
 
-  grunt.registerTask('deploy', ['gh-pages']);
-
-  // grunt.registerTask('deploy', ['buildcontrol']);
 };
