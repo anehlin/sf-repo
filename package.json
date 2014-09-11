@@ -12,8 +12,6 @@
     "grunt-zipstream": "*",
     "grunt-contrib-copy": "~0.4.0",
     "grunt-sf-tooling": "*",
-    "grunt-git-deploy": "^0.1.1",
-    "grunt-gh-pages": "^0.9.1",
-    "grunt-build-control": "^0.1.3"
+    "grunt-gh-pages": "^0.9.1"
   }
 }

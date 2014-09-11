@@ -5,27 +5,6 @@ module.exports = function(grunt) {
 
   var sfInfo = grunt.file.readJSON('sfInfo.json');
 
-  // grunt.registerMultiTask('init_repo', 'Initialize a git repository in a directory.', function() {
-  //   var dest = this.files[0].dest;
-
-  //   if (!grunt.file.exists(dest)) {
-  //     grunt.file.mkdir(dest);
-  //   }
-
-  //   else if (!grunt.file.isDir(dest)) {
-  //     grunt.fail.warn('A source directory is needed.');
-  //     return false;
-  //   }
-
-  //   var done = this.async();
-
-  //   grunt.util.spawn({
-  //     cmd: 'git',
-  //     args: ['init'],
-  //     opts: {cwd: dest}
-  //   }, done);
-  // });
-
   // Project configuration.
   grunt.initConfig({
 
@@ -70,11 +49,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // Unit tests.
-    nodeunit: {
-      tests: ['test/*_test.js']
-    },
-
     'gh-pages': {
       options: {
         components: '**',
@@ -92,13 +66,12 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-sf-tooling');
   grunt.loadNpmTasks('grunt-gh-pages');
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'sfpull', 'jshint', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'sfpull', 'jshint']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);
