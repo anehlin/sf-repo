@@ -1,7 +1,7 @@
 public class TestFactory {
-    
+
     // Returns a list of valid mock Users
-    public static List<User> buildTestUsers(Integer count, String profilename) {        
+    public static List<User> buildTestUsers(Integer count, String profilename) {
         List<User> users = new List<User>();
         for(Integer i = 0; i < count; i++) {
             User newuser = new User();
@@ -11,10 +11,6 @@ public class TestFactory {
             newuser.Username = 'test' + String.valueOf(i) + '@carlsson.com';
             newuser.CommunityNickname = 'test' + String.valueOf(i) + '@carlsson.com';
             newuser.ProfileId = [SELECT id FROM Profile WHERE name= :profilename].id;
-            newuser.TimeZoneSidKey = 'Europe/Paris';
-            newuser.LocaleSidKey = 'sv';
-            newuser.EmailEncodingKey = 'UTF-8';
-            newuser.LanguageLocaleKey = 'sv';
             newuser.isActive = true;
             users.add(newuser);
         }
