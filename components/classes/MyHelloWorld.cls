@@ -13,6 +13,7 @@ global class MyHelloWorld implements Schedulable{
         for (Opportunity op : opps) {
             accsValidCustomers.add(op.AccountId);
         }
+        system.debug('accsValidCustomers=' + accsValidCustomers.size());
 
         List<Opportunity> opps4 = new List<Opportunity>(   // Find becoming Customers
             [SELECT AccountId
@@ -22,7 +23,7 @@ global class MyHelloWorld implements Schedulable{
         for (Opportunity op : opps4) {
             accsBecomingCustomers.add(op.AccountId);
         }
-
+        system.debug('accsBecomingCustomers=' + accsBecomingCustomers.size());
         for (Id op : accsBecomingCustomers) {
             system.debug('ID = ' + op);
         }
