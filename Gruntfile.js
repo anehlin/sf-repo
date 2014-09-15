@@ -63,7 +63,7 @@ module.exports = function(grunt) {
         pkg: {
           staticresource: ['*'],
           apexclass:      ['*'],
-          apextrigger:      ['*'],
+          apextrigger:    ['*'],
           apexpage:       ['*']
         }
       }
@@ -81,13 +81,13 @@ module.exports = function(grunt) {
         options: {
           user: 'anders.nehlin@softhouse.se', // storing my un/pw as env vars for security
           pass: '!QAZx#EDCsw2', // storing my un/pw as env vars for security
-          token: 'QdzdnzdfcbDsyWYQRp4K1mlH',
+          // token: 'QdzdnzdfcbDsyWYQRp4K1mlH',
           serverurl: 'https://login.salesforce.com' // default => https://login.salesforce.com
         },
         pkg: {
           staticresource: ['*'],
           apexclass:      ['*'],
-          apextrigger:      ['*'],
+          apextrigger:    ['*'],
           apexpage:       ['*']
         }
       }
@@ -97,6 +97,7 @@ module.exports = function(grunt) {
       build: ['tmp', 'build/package.xml']
     },
 
+    // Deploy to git repository
     'gh-pages': {
       options: {
         components: '**',
