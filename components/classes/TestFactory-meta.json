@@ -1,8 +1,0 @@
-{
-	"id": "01pi0000006Eh9OAAS",
-	"name": "TestFactory",
-	"apiVersion": 31,
-	"status": "Active",
-	"container": "ApexClassMember",
-	"source": "TestFactory.cls"
-}

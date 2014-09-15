@@ -1,8 +1,0 @@
-{
-	"id": "01pi0000006EdjuAAC",
-	"name": "MyHelloWorld",
-	"apiVersion": 31,
-	"status": "Active",
-	"container": "ApexClassMember",
-	"source": "MyHelloWorld.cls"
-}

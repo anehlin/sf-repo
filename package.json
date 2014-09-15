@@ -1,17 +1,17 @@
 {
-  "name": "grunt_tutorial",
+  "name": "mytest",
   "version": "0.0.0",
-  "author": "William Naslund",
-  "license": "MIT",
+  "author": "Kevin O'Hara",
+  "license": "BSD",
   "devDependencies": {
-    "grunt": "*",
+    "grunt": "^0.4.5",
     "grunt-contrib-jshint": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-concat": "*",
     "grunt-contrib-clean": "*",
     "grunt-zipstream": "*",
     "grunt-contrib-copy": "~0.4.0",
-    "grunt-sf-tooling": "*",
+    "grunt-ant-sfdc": "^0.2.6",
     "grunt-gh-pages": "^0.9.1"
   }
 }
