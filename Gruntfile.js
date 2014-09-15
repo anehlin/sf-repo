@@ -67,6 +67,7 @@ module.exports = function(grunt) {
           apexpage:       ['*']
         }
       }
+
     },
 
     antdeploy: {
@@ -77,10 +78,10 @@ module.exports = function(grunt) {
       },
       // create individual deploy targets. these can be
       // individual orgs or even the same org with different packages
-      src:  {
+      dev1:  {
         options: {
-          user: 'anders.nehlin@softhouse.se', // storing my un/pw as env vars for security
-          pass: '!QAZx#EDCsw2', // storing my un/pw as env vars for security
+          user: 'anders.nehlin@softhouse.se',
+          pass: '!QAZx#EDCsw2',
           token: 'QdzdnzdfcbDsyWYQRp4K1mlH',
           serverurl: 'https://login.salesforce.com' // default => https://login.salesforce.com
         },
@@ -89,6 +90,20 @@ module.exports = function(grunt) {
           apexclass:      ['*'],
           apextrigger:    ['*'],
           apexpage:       ['*']
+        }
+      },
+
+      // specify one deploy target
+      dev2: {
+        options: {
+          user:  'anders.nehlin@yahoo.se',
+          pass:  'ZSE€5rdx',
+          token: 'n74Zvkszuyn0XzuLTOn6K17JS',
+          serverurl: 'https://login.salesforce.com' // default => https://login.salesforce.com
+        },
+        pkg: {
+          apexclass:      ['*'],
+          staticresource: ['*']
         }
       }
     },
