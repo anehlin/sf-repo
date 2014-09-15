@@ -153,7 +153,7 @@ module.exports = function(grunt) {
   // default task (no deploy)
   grunt.registerTask('default', ['clean', 'jshint', 'concat', 'uglify', 'copy', 'zip', 'write-meta' ]);
 
-  // 'all' task including deploy
+  // deploy
   grunt.registerTask('deploy', ['gh-pages' , 'antdeploy']);
 
 
