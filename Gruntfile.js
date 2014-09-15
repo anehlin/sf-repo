@@ -55,7 +55,9 @@ module.exports = function(grunt) {
     antretrieve: {
       options: {
         user: 'anders.nehlin@softhouse.se',
-        pass: '!QAZx#EDCsw2QdzdnzdfcbDsyWYQRp4K1mlH'
+        // pass: '!QAZx#EDCsw2QdzdnzdfcbDsyWYQRp4K1mlH'
+        pass: '!QAZx#EDCsw2', // storing my un/pw as env vars for security
+        token: 'QdzdnzdfcbDsyWYQRp4K1mlH'
       },
       // specify one retrieve target
       src: {
@@ -81,7 +83,7 @@ module.exports = function(grunt) {
         options: {
           user: 'anders.nehlin@softhouse.se', // storing my un/pw as env vars for security
           pass: '!QAZx#EDCsw2', // storing my un/pw as env vars for security
-          // token: 'QdzdnzdfcbDsyWYQRp4K1mlH',
+          token: 'QdzdnzdfcbDsyWYQRp4K1mlH',
           serverurl: 'https://login.salesforce.com' // default => https://login.salesforce.com
         },
         pkg: {
