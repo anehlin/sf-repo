@@ -102,8 +102,10 @@ module.exports = function(grunt) {
           serverurl: 'https://login.salesforce.com' // default => https://login.salesforce.com
         },
         pkg: {
+          staticresource: ['*'],
           apexclass:      ['*'],
-          staticresource: ['*']
+          apextrigger:    ['*'],
+          apexpage:       ['*']
         }
       }
     },
