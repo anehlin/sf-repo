@@ -51,12 +51,10 @@ module.exports = function(grunt) {
       }
     },
     /* grunt-ant-sfde retrieve */
-
     antretrieve: {
       options: {
         user: 'anders.nehlin@softhouse.se',
-        // pass: '!QAZx#EDCsw2QdzdnzdfcbDsyWYQRp4K1mlH'
-        pass: '!QAZx#EDCsw2', // storing my un/pw as env vars for security
+        pass: '!QAZx#EDCsw2',
         token: 'QdzdnzdfcbDsyWYQRp4K1mlH'
       },
       // specify one retrieve target
